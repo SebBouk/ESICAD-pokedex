@@ -23,19 +23,18 @@ body {
 
 header {
   background: rgb(255, 255, 255);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 0%,
-    var(--red-darker) 10%,
-    var(--red-darker) 100%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 1) 0%,
+      var(--red-darker) 10%,
+      var(--red-darker) 100%);
   border-bottom: 1px solid var(--red-darker);
 }
-header > a {
+
+header>a {
   text-decoration: none;
 }
 
-header > a > h1 {
+header>a>h1 {
   margin: 0.5rem;
   text-align: center;
   font-family: "Pokemon", Arial, Helvetica, sans-serif;
@@ -59,6 +58,7 @@ body {
   justify-content: space-between;
   height: 100vh;
 }
+
 #main-wrapper {
   flex: 1 0 auto;
   display: flex;
@@ -68,15 +68,14 @@ body {
 #main-wrapper main {
   flex: 1 0 auto;
 }
+
 #side-menu {
   min-width: 15rem;
   max-width: 25%;
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    var(--red-darker) 0%,
-    var(--red-lighter) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--red-darker) 0%,
+      var(--red-lighter) 100%);
 }
 
 #side-menu a {
@@ -106,7 +105,7 @@ footer {
   color: white;
 }
 
-#search-bar > *:not(:last-child) {
+#search-bar>*:not(:last-child) {
   margin-right: 0.5rem;
 }
 
@@ -115,18 +114,33 @@ footer {
   vertical-align: baseline;
 }
 
-.input-group > * {
+.input-group>* {
   line-height: 1.5rem;
   border: none;
 }
-.input-group > *:first-child {
+
+.input-group>*:first-child {
   border-radius: 25px 25px 0% 25px / 25px 0% 25px 25px;
 }
 
-.input-group > *:last-child {
+.input-group>*:last-child {
   border-radius: 25px 25px 25px 25px / 0% 25px 25px 0%;
 }
 
 .text-center {
   text-align: center;
+}
+
+.tableau_pokemon {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tableau_all {
+  border: 1px solid black;
+  table-layout: auto;
+  width: 117px;
+  text-align: center;
+  font-size: 20px;
 }
