@@ -20,8 +20,8 @@ require_once("head.php");
 require_once("database-connection.php");
 $query = $databaseConnection->query("SELECT pokemon.*, type1.libelleType AS premier_type, type2.libelleType AS deuxieme_type
 FROM pokemon
-JOIN typepokemon AS type1 ON type1.IdType = pokemon.IdTypePokemon
-JOIN typepokemon AS type2 ON type2.IdType = pokemon.IdSecondTypePokemon
+LEFT JOIN typepokemon AS type1 ON type1.IdType = pokemon.IdTypePokemon
+LEFT JOIN typepokemon AS type2 ON type2.IdType = pokemon.IdSecondTypePokemon
 ORDER BY IdPokemon ASC;");
 
 if (!$query) {
