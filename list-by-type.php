@@ -10,6 +10,7 @@ require_once("head.php");
     CHAQUE POKEMON DOIT ETRE CLIQUABLE POUR NAVIGUER SUR UNE PAGE OU L'ON AFFICHE SON IMAGE ET L'ENSEMBLE DE SES CARACTERISTIQUES
     &gt;
     </pre>
+
 <?php
 require_once("footer.php");
 ?>
