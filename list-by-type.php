@@ -33,11 +33,16 @@ if(isset($_GET['type'])) {
     // Afficher la liste des Pokémon correspondants
     if ($result->num_rows > 0) {
         echo "<h2>Pokémon de type $type :</h2>";
-        echo "<ul>";
+        echo "<thead>";
+        echo "<th class = tableau_all>Numéro</th>
+        <th class = tableau_all>Nom</th>
+        <th class = tableau_all>Photo</th>
+        <th class = tableau_all>Type 1</th>
+        <th class = tableau_all>Type 2</th>";
         while($row = $result->fetch_assoc()) {
-            echo "<li>" . $row["NomPokemon"] . "</li>";
+            echo "<tr><td class = tableau_all>" . $row["IdPokemon"] . "</td><td class = tableau_all>" . $row["NomPokemon"] . "</td><td class = tableau_all><img src='" . $row["urlPhoto"] . "'></td><td class = tableau_all>" . $row["libelleType"] . "</td><td class = tableau_all>" . $row["libelleType"] . "</td></tr>";
         }
-        echo "</ul>";
+        echo "</thead>";
     } else {
         echo "Aucun Pokémon trouvé pour ce type";
     }
