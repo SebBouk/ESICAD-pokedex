@@ -154,8 +154,10 @@ footer {
   border: 1px solid black;
   border-collapse: collapse;
   font-family: "Pokemon", Arial, Helvetica, sans-serif;
+  color: rgb(255, 191, 0);
+  -webkit-text-stroke: 0.05rem rgb(23, 23, 130);
   table-layout: auto;
-  width: 85px;
+  width: 100px;
   text-align: center;
   font-size: 15px;
 }
@@ -167,11 +169,18 @@ footer {
   table-layout: auto;
   width: 85px;
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   background-color: rgb(246, 167, 167);
   box-shadow: 5px 5px 5px rgba(224, 79, 79, 0.547);
+  margin-left: 1px;
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(255, 191, 0);
+  -webkit-text-stroke: 0.1rem rgb(23, 23, 130);
 }
 
 .titre{
   font-family: "Pokemon", Arial, Helvetica, sans-serif;
+  color: rgb(255, 191, 0);
+  -webkit-text-stroke: 0.07rem rgb(23, 23, 130);
 }

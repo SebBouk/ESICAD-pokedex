@@ -29,7 +29,16 @@ if (!$query) {
 } else {
     $pokemons = $query->fetch_all(MYSQLI_ASSOC);
     foreach ($pokemons as $pokemon) {
-        echo "<tr><td class = tableau_all>" . $pokemon["IdPokemon"] . "</td><td class = tableau_all>" . $pokemon["NomPokemon"] . "</td><td class = tableau_all><img src='" . $pokemon["urlPhoto"] . "'></td><td class = tableau_all>" . $pokemon["PV"] . "</td><td class = tableau_all>" . $pokemon["Attaque"] . "</td><td class = tableau_all>" . $pokemon["Defense"] . "</td><td class = tableau_all>" . $pokemon["Vitesse"] . "</td><td class = tableau_all>" . $pokemon["Special"] . "</td><td class = tableau_all>" . $pokemon["premier_type"] . "</td><td class = tableau_all>" . $pokemon["deuxieme_type"] . "</td></tr>";
+        echo "<tr><td class = tableau_all>" . $pokemon["IdPokemon"] . "</td>
+        <td class = tableau_all>" . $pokemon["NomPokemon"] . "</td>
+        <td class = tableau_all><a href='" . $pokemon["urlPhoto"] . "'><img src='" . $pokemon["urlPhoto"] . "'></a></td>
+        <td class = tableau_all>" . $pokemon["PV"] . "</td>
+        <td class = tableau_all>" . $pokemon["Attaque"] . "</td>
+        <td class = tableau_all>" . $pokemon["Defense"] . "</td>
+        <td class = tableau_all>" . $pokemon["Vitesse"] . "</td>
+        <td class = tableau_all>" . $pokemon["Special"] . "</td>
+        <td class = tableau_all>" . $pokemon["premier_type"] . "</td>
+        <td class = tableau_all>" . $pokemon["deuxieme_type"] . "</td></tr>";
     }
 }
 ?>
