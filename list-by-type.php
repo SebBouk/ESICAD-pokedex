@@ -13,7 +13,7 @@ $result_types = $databaseConnection->query($sql_types);
 
 // Afficher les boutons pour chaque type de Pokémon
 if ($result_types->num_rows > 0) {
-    echo "<h1 class=titre>Boutons par Type Pokémon</h1>";
+    echo "<h1 class=titre>Type Pokémon</h1>";
 
     while($row = $result_types->fetch_assoc()) {
         echo '<a href="list-by-type.php?type='.$row['IdType'].'" class=tableau_type>'. $row["libelleType"] . '</a>';
@@ -33,7 +33,7 @@ if(isset($_GET['type'])) {
     LEFT JOIN pokemon P ON P.IdTypePokemon = T.IdType 
     WHERE P.IdTypePokemon = $Idtype OR P2.IdSecondTypePokemon = $Idtype OR P.IdSecondTypePokemon = $Idtype
     GROUP BY NomPokemon
-    ORDER BY P.IdTypePokemon;";
+    ORDER BY P.IdPokemon;";
 
     $query = $databaseConnection->query($sql);
 
