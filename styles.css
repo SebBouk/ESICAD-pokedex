@@ -139,8 +139,39 @@ footer {
 
 .tableau_all {
   border: 1px solid black;
+  border-collapse: collapse;
   table-layout: auto;
-  width: 117px;
+  width: 110px;
   text-align: center;
   font-size: 20px;
+}
+
+.tableau_Type_pokemon{
+  border-collapse: collapse;
+}
+
+.tableau_t {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-family: "Pokemon", Arial, Helvetica, sans-serif;
+  table-layout: auto;
+  width: 85px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.tableau_type {
+  border: 1px solid black;
+  border-collapse: separate;
+  font-family: "Pokemon", Arial, Helvetica, sans-serif;
+  table-layout: auto;
+  width: 85px;
+  text-align: center;
+  font-size: 15px;
+  background-color: rgb(246, 167, 167);
+  box-shadow: 5px 5px 5px rgba(224, 79, 79, 0.547);
+}
+
+.titre{
+  font-family: "Pokemon", Arial, Helvetica, sans-serif;
 }

@@ -6,16 +6,16 @@ require_once("head.php");
 ?>
 <table class = "tableau_pokemon">
     <thead >
-        <th class = "tableau_all">Numéro</th>
-        <th class = "tableau_all">Nom</th>
-        <th class = "tableau_all">Photo</th>
-        <th class = "tableau_all">PV</th>
-        <th class = "tableau_all">Attaque</th>
-        <th class = "tableau_all">Defense</th>
-        <th class = "tableau_all">Vitesse</th>
-        <th class = "tableau_all">Special</th>
-        <th class = "tableau_all">Type 1</th>
-        <th class = "tableau_all">Type 2</th>
+        <th class = "tableau_t">Numéro</th>
+        <th class = "tableau_t">Nom</th>
+        <th class = "tableau_t">Photo</th>
+        <th class = "tableau_t">PV</th>
+        <th class = "tableau_t">Attaque</th>
+        <th class = "tableau_t">Defense</th>
+        <th class = "tableau_t">Vitesse</th>
+        <th class = "tableau_t">Special</th>
+        <th class = "tableau_t">Type 1</th>
+        <th class = "tableau_t">Type 2</th>
 <?php
 require_once("database-connection.php");
 $query = $databaseConnection->query("SELECT pokemon.*, type1.libelleType AS premier_type, type2.libelleType AS deuxieme_type

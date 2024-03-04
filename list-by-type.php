@@ -13,10 +13,10 @@ $result_types = $databaseConnection->query($sql_types);
 
 // Afficher les boutons pour chaque type de Pokémon
 if ($result_types->num_rows > 0) {
-    echo "<h1>Boutons par Type Pokémon</h1>";
+    echo "<h1 class=titre>Boutons par Type Pokémon</h1>";
     echo "<form method='get'>";
     while($row = $result_types->fetch_assoc()) {
-        echo '<input type="submit" name="type" value="' . $row["libelleType"] . '">';
+        echo '<input type="submit" name="type" value="' . $row["libelleType"] . '" class="tableau_type"  >';
     }
     echo "</form>";
 } else {
@@ -32,11 +32,11 @@ if(isset($_GET['type'])) {
 
     // Afficher la liste des Pokémon correspondants
     if ($result->num_rows > 0) {
-        echo "<h2>Pokémon de type $type :</h2>";
-        echo "<table>";
-        echo "<th class = tableau_all>Numéro</th>
-        <th class = tableau_all>Nom</th>
-        <th class = tableau_all>Photo</th>";
+        echo "<h2 class=titre>Pokémon de type $type :</h2>";
+        echo "<table class ='tableau_Type_pokemon'>";
+        echo "<th class = tableau_t>Numéro</th>
+        <th class = tableau_t>Nom</th>
+        <th class = tableau_t>Photo</th>";
         while($row = $result->fetch_assoc()) {
             echo "<tr><td class = tableau_all>" . $row["IdPokemon"] . 
             "</td><td class = tableau_all>" . $row["NomPokemon"] . 
