@@ -148,7 +148,9 @@ footer {
 
 .tableau_Type_pokemon{
   border-collapse: collapse;
+
 }
+
 
 .tableau_t {
   border: 1px solid black;
@@ -177,7 +179,12 @@ footer {
   text-decoration: none;
   color: rgb(255, 191, 0);
   -webkit-text-stroke: 0.1rem rgb(23, 23, 130);
+  transition: transform 0.1s, padding 0.1s;
 }
+.tableau_type:hover{
+  padding: 20px; /* Augmenter le padding au survol */
+  transition: transform 0.1s, padding 0.1s;
+  }
 
 .titre{
   font-family: "Pokemon", Arial, Helvetica, sans-serif;

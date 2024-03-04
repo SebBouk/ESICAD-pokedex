@@ -27,18 +27,23 @@ if(isset($_GET['type'])) {
     $Idtype = $_GET['type'];
 
     // Requête SQL pour récupérer les Pokémon correspondant au type sélectionné
-    $sql = "SELECT libelleType, IdType, P.IdPokemon, P.NomPokemon, P.urlPhoto FROM typepokemon T
-        LEFT JOIN pokemon P ON T.IdType = P.IdTypePokemon 
-        LEFT JOIN pokemon P2 ON T.IdType = P2.IdSecondTypePokemon 
-        WHERE P.IdTypePokemon = $Idtype 
-        OR P2.IdSecondTypePokemon = $Idtype";
+    $sql = "SELECT T.libelleType, T.IdType, P.IdPokemon, P.NomPokemon, P.urlPhoto, P.IdSecondTypePokemon, P.IdTypePokemon 
+    FROM typepokemon T
+    LEFT JOIN pokemon P2 ON P2.IdSecondTypePokemon = T.IdType 
+    LEFT JOIN pokemon P ON P.IdTypePokemon = T.IdType 
+    WHERE P.IdTypePokemon = $Idtype OR P2.IdSecondTypePokemon = $Idtype OR P.IdSecondTypePokemon = $Idtype
+    GROUP BY NomPokemon
+    ORDER BY P.IdTypePokemon;";
+
     $query = $databaseConnection->query($sql);
 
+    if ($query->num_rows>0){
     $typeResult=$query->fetch_assoc();
     $typelibelle=$typeResult['libelleType'];
 
+    $query->data_seek(0);
     // Afficher la liste des Pokémon correspondants
-    if ($query->num_rows > 0) {
+    
         $result = $query->fetch_all(MYSQLI_ASSOC);
         echo "<h2 class=titre>Pokémon de type ".$typelibelle." :</h2>";
         echo "<table class ='tableau_Type_pokemon'>";
