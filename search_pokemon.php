@@ -4,12 +4,29 @@
 <?php
 require_once("head.php");
 ?>
-<pre>
-    &lt;
-    A REMPLACER PAR VOTRE CODE POUR CHARGER ET AFFICHER DANS UN TABLEAU LE RESULTAT DE LA RECHERCHE DE POKEMONS DONT LE NOM CONTIENT LE TERME RECHERCHE, CLASSES PAR LEUR NOM.
-    CHAQUE POKEMON DOIT ETRE CLIQUABLE POUR NAVIGUER SUR UNE PAGE OU L'ON AFFICHE SON IMAGE ET L'ENSEMBLE DE SES CARACTERISTIQUES
-    &gt;
-    </pre>
+
 <?php
+require_once("database-connection.php");
+
+if (isset($_GET['q'])){
+    $nom = $_GET['q'];
+
+    $query = $databaseConnection->query("SELECT * FROM pokemon WHERE NomPokemon LIKE '".$nom."%'");
+
+    if(!$query){
+        echo "Erreur SQL : " .$databaseConnection->error;
+    } else {
+        echo '<table>';
+        while ($pokemon = $query->fetch_assoc()){
+            echo '<tr>';
+            echo '<td><a href="detailsPokemon.php?id='.$pokemon['IdPokemon'].'"><img src="'.$pokemon['urlPhoto'].'"></a><td>';
+            echo '<td><a href="detailsPokemon.php?id='.$pokemon['IdPokemon'].'">'.$pokemon['NomPokemon'].'</a><td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
+}else{
+    echo"Aucun Nom fourni.";
+}
 require_once("footer.php");
 ?>
