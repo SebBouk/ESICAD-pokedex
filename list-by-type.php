@@ -52,8 +52,8 @@ if(isset($_GET['type'])) {
         <th class = tableau_t>Photo</th>";
         foreach ($result as $row) {
             echo "<tr><td class = tableau_all>" . $row["IdPokemon"] . 
-            "</td><td class = tableau_all>" . $row["NomPokemon"] . 
-            "</td><td class = tableau_all><img src='" . $row["urlPhoto"] . 
+            "</td><td class = tableau_all><a href='detailsPokemon.php?id=".$row['IdPokemon']." '>" . $row["NomPokemon"] . 
+            "</td><td class = tableau_all><a href='detailsPokemon.php?id=".$row['IdPokemon']." '><img src='" . $row["urlPhoto"] . 
             "'></td></tr>";
         }
         echo "</table>";
