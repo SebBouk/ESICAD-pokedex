@@ -24,7 +24,7 @@ if(!$query){
         $evo=$queryEvo->fetch_assoc();
         if($evo){
             $queryEvoDetails=$databaseConnection->query("SELECT * FROM pokemon WHERE IdPokemon = ".$evo['idEvolution']);
-            while($queryEvoDetails){
+            if($queryEvoDetails){
                 $evodetails = $queryEvoDetails->fetch_assoc();
                 echo '<h2>Evolution : '. $evodetails['NomPokemon'].'</h2>';
                 echo '<img src="'. $evodetails['urlPhoto'].'">
