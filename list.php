@@ -30,7 +30,7 @@ if (!$query) {
     $pokemons = $query->fetch_all(MYSQLI_ASSOC);
     foreach ($pokemons as $pokemon) {
         echo "<tr><td class = tableau_all>" . $pokemon["IdPokemon"] . "</td>
-        <td class = tableau_all>" . $pokemon["NomPokemon"] . "</td>
+        <td class = tableau_all><a href='detailsPokemon.php?id=".$pokemon['IdPokemon']." '>" . $pokemon["NomPokemon"] . "</td>
         <td class = tableau_all><a href='detailsPokemon.php?id=".$pokemon['IdPokemon']." '><img src='" . $pokemon["urlPhoto"] . "'></a></td>
         <td class = tableau_all>" . $pokemon["PV"] . "</td>
         <td class = tableau_all>" . $pokemon["Attaque"] . "</td>
