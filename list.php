@@ -31,7 +31,7 @@ if (!$query) {
     foreach ($pokemons as $pokemon) {
         echo "<tr><td class = tableau_all>" . $pokemon["IdPokemon"] . "</td>
         <td class = tableau_all>" . $pokemon["NomPokemon"] . "</td>
-        <td class = tableau_all><a href='" . $pokemon["urlPhoto"] . "'><img src='" . $pokemon["urlPhoto"] . "'></a></td>
+        <td class = tableau_all><a href='detailsPokemon.php?id=".$pokemon['IdPokemon']." '><img src='" . $pokemon["urlPhoto"] . "'></a></td>
         <td class = tableau_all>" . $pokemon["PV"] . "</td>
         <td class = tableau_all>" . $pokemon["Attaque"] . "</td>
         <td class = tableau_all>" . $pokemon["Defense"] . "</td>
