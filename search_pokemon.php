@@ -11,7 +11,7 @@ require_once("database-connection.php");
 if (isset($_GET['q'])){
     $nom = $_GET['q'];
 
-    $query = $databaseConnection->query("SELECT * FROM pokemon WHERE NomPokemon LIKE '".$nom."%'");
+    $query = $databaseConnection->query("SELECT * FROM pokemon WHERE NomPokemon LIKE '".$nom."%' UNION SELECT * FROM pokemon WHERE NomPokemon LIKE '%".$nom."%'");
 
     if(!$query){
         echo "Erreur SQL : " .$databaseConnection->error;
