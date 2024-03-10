@@ -23,6 +23,17 @@
                 <input id="q" name="q" type="search" placeholder="Rechercher un pokémon"><button type="submit">🔎</button>
             </span>
         </form>
+            <?php
+            require_once("check-login.php");
+            if(isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
+            $firstName = $_SESSION['firstName'];
+            $lastName = $_SESSION['lastName'];
+            echo "Bonjour $firstName $lastName";
+            }else{
+                echo "Bonjour";
+            }
+            ?>
+        <a href="logout.php">Se déconnecter</a>
     </header>
 
     <div id="main-wrapper">
